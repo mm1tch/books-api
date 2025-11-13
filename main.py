@@ -17,7 +17,7 @@ app = FastAPI(
 
 # Función para conectar a la base de datos
 def get_db_connection():
-    conn = psycopg2.connect("postgresql://postgres.vdgonnkkqvgvmwbuqwbj:A839Oetk7GZ@aws-1-us-east-1.pooler.supabase.com:5432/postgres")
+    conn = psycopg2.connect(os.getenv("DATABASE_URL"))
     return conn
 
 # Modelo para crear/actualizar libros
